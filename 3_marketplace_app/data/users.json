@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "ratings": [
+            {
+                "rating": 4,
+                "ratingCreatorUserId": 2
+            },
+            {
+                "rating": 5,
+                "ratingCreatorUserId": 3
+            },
+            {
+                "rating": 2,
+                "ratingCreatorUserId": 4
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "ratings": [
+            {
+                "rating": 3,
+                "ratingCreatorUserId": 4
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Charles",
+        "ratings": [
+            {
+                "rating": 3,
+                "ratingCreatorUserId": 5
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Cleo",
+        "ratings": []
+    }
+]

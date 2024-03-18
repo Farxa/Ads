@@ -1,0 +1,122 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+nav {
+  padding: 1em;
+}
+
+#back-link {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto;
+  max-width: 80%;
+}
+
+#write-message-button {
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+  background-color: RGB(181, 233, 65);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+#ad-details {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+#ad-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1em;
+}
+
+#ad-image {
+  width: 60%;
+  height: auto;
+}
+
+#description {
+  margin-top: 1em;
+}
+
+#description h2,
+#description hr {
+  margin-bottom: 0.5em;
+}
+#message-box {
+  width: 100%;
+  margin-top: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#message-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-box label {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+#message-box textarea {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#message-box button {
+  padding: 0.5em 1em;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message-box button i {
+  margin-right: 0.5em;
+}
+
+@media (min-width: 768px) {
+  #content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #write-message-button {
+    align-self: flex-end;
+    margin: 0 0 1em 0; /* Add margin to the bottom only */
+    padding: 0.5em 1em;
+  }
+}
