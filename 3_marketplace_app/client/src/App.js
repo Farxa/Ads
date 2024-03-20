@@ -11,7 +11,7 @@ const App = () => {
     <AdsProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Ads />} />{" "}
+          <Route path="/" element={<Ads />} />
           <Route path="/details" element={<Details />} />
         </Routes>
       </BrowserRouter>

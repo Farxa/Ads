@@ -7,42 +7,38 @@ function FakeDataGenerator(accountType = "default") {
 /**
  *  Please do NOT simply use randEmail() in this exercise
  */
+FakeDataGenerator.prototype.sanitizeNameForEmail = function (name) {
+  return name.replace(/[ äöüÄÖÜßáéðóšúâÁÃíČøÆëčŠ]/g, "");
+};
 
 FakeDataGenerator.prototype.generateFakeUser = function () {
   let number = Math.floor(Math.random() * 100) + 1;
 
-  let result;
-  while (!result || /[ äöüÄÖÜßáéðóšúâÁÃíČøÆëčŠ]/.test(result.email)) {
-    const firstname = faker.randFirstName();
-    const lastname = faker.randLastName();
+  let firstname = faker.randFirstName();
+  let lastname = faker.randLastName();
 
-    const delimiter = ["_", ".", "-", ""][
-      faker.randNumber({ min: 0, max: ["_", ".", "-", ""].length - 1 })
-    ];
+  // Sanitize names to remove invalid characters for email addresses
+  firstname = this.sanitizeNameForEmail(firstname);
+  lastname = this.sanitizeNameForEmail(lastname);
 
-    const email =
-      firstname +
-      delimiter +
-      lastname +
-      faker.randNumber({ min: 0, max: 100 }) +
-      "@" +
-      faker.randDomainName();
-
-    result = {
-      firstname,
-      lastname,
-      email,
-      contactName: `${firstname} ${lastname}`,
-    };
-  }
+  const delimiter = ["_", ".", "-", ""][
+    faker.randNumber({ min: 0, max: ["_", ".", "-", ""].length - 1 })
+  ];
+  const email =
+    firstname +
+    delimiter +
+    lastname +
+    faker.randNumber({ min: 0, max: 100 }) +
+    "@" +
+    faker.randDomainName();
 
   return {
-    email: result.email,
-    contactName: result.contactName,
+    email: email,
+    contactName: `${firstname} ${lastname}`,
     password: faker.randPassword(),
     accountType: this.accountType,
-    firstName: result.firstname,
-    lastName: result.lastname,
+    firstName: firstname,
+    lastName: lastname,
     phoneNumber: faker.randPhoneNumber(),
     brandingStreet: `${faker.randStreetName()} ${number}`,
   };
