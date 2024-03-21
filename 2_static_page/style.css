@@ -1,3 +1,9 @@
+:root {
+  --primary-text-color: #000;
+  --button-bg-color: rgb(181, 233, 65);
+  --border-color: #ccc;
+}
+
 *,
 *:before,
 *:after {
@@ -17,7 +23,7 @@ nav {
 
 #back-link {
   text-decoration: none;
-  color: #000;
+  color: var(--primary-text-color);
   display: inline-block;
 }
 
@@ -37,7 +43,7 @@ main {
 #write-message-button {
   margin-bottom: 1em;
   padding: 0.5em 1em;
-  background-color: RGB(181, 233, 65);
+  background-color: var(--button-bg-color);
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -46,7 +52,7 @@ main {
 #ad-details {
   width: 100%;
   padding: 1em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
 }
 
 #ad-content {
@@ -72,7 +78,7 @@ main {
   width: 100%;
   margin-top: 1em;
   padding: 1em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -90,13 +96,13 @@ main {
 #message-box textarea {
   margin-bottom: 1em;
   padding: 0.5em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
 }
 
 #message-box button {
   padding: 0.5em 1em;
-  background-color: #eee;
+  background-color: var(--button-bg-color);
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -116,7 +122,7 @@ main {
 
   #write-message-button {
     align-self: flex-end;
-    margin: 0 0 1em 0; /* Add margin to the bottom only */
+    margin: 0 0 1em 0;
     padding: 0.5em 1em;
   }
 }
