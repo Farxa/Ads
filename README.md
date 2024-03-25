@@ -5,7 +5,7 @@
 ```
 cd 3_marketplace_app/client
 npm install
-npm start
+npm run start
 ```
 
 To generate fake data about ads and users. A fake server exposes the data as REST API. You can use it by
